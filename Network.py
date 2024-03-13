@@ -3,6 +3,8 @@ import subprocess
 import platform
 import time
 
+App_Server = '10.100.16.101'
+DB_Server = '10.100.76.103'
 def ping_host(host):
     try:
         if platform.system().lower() == 'windows':
@@ -14,8 +16,8 @@ def ping_host(host):
         return False
 
 def main():
-    #hosts_to_ping = ['10.145.49.25', '10.145.49.24', '10.145.49.27', 'silcal.lotuswireless.com']
-    hosts_to_ping = ['10.100.76.101', '10.100.76.103', 'silcal.lotuswireless.com']
+    
+    hosts_to_ping = [App_Server, DB_Server, 'silcal.lotuswireless.com']
     while True:
         for host_to_ping in hosts_to_ping:
             if ping_host(host_to_ping):
@@ -23,7 +25,7 @@ def main():
             else:
                 print(f"Connection to {host_to_ping} failed. Check your network connection.")
 
-        # Adjust the sleep time according to your needs (in seconds)
+       
         time.sleep(60)
 
 if __name__ == "__main__":
