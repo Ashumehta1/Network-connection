@@ -3,8 +3,8 @@ import subprocess
 import platform
 import time
 
-App_Server = '10.100.16.101'
-DB_Server = '10.100.76.103'
+App_Server = '10.124.16.101'
+DB_Server = '10.124.76.103'
 def ping_host(host):
     try:
         if platform.system().lower() == 'windows':
